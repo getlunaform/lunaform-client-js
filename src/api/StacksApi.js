@@ -224,6 +224,52 @@
         authNames, contentTypes, accepts, returnType, callback
       );
     }
+
+    /**
+     * Callback function to receive the result of the undeployStack operation.
+     * @callback module:api/StacksApi~undeployStackCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Undeploy a teraform module
+     * @param {String} id Unique identifier for this stack
+     * @param {module:api/StacksApi~undeployStackCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.undeployStack = function(id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling undeployStack");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api-key'];
+      var contentTypes = ['application/vnd.lunaform.v1+json'];
+      var accepts = ['application/vnd.lunaform.v1+json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/tf/stack/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
   };
 
   return exports;

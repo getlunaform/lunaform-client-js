@@ -58,6 +58,7 @@
     _this['module-id'] = moduleId;
 
 
+
   };
 
   /**
@@ -92,6 +93,9 @@
       if (data.hasOwnProperty('workspace')) {
         obj['workspace'] = ApiClient.convertToType(data['workspace'], 'String');
       }
+      if (data.hasOwnProperty('variables')) {
+        obj['variables'] = ApiClient.convertToType(data['variables'], {'String': 'String'});
+      }
     }
     return obj;
   }
@@ -124,6 +128,10 @@
    * @member {String} workspace
    */
   exports.prototype['workspace'] = undefined;
+  /**
+   * @member {Object.<String, String>} variables
+   */
+  exports.prototype['variables'] = undefined;
 
 
   /**

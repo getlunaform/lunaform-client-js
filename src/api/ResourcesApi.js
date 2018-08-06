@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ResponseListResources'], factory);
+    define(['ApiClient', 'model/ResponseListResources', 'model/ServerError'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ResponseListResources'));
+    module.exports = factory(require('../ApiClient'), require('../model/ResponseListResources'), require('../model/ServerError'));
   } else {
     // Browser globals (root is window)
     if (!root.Lunaform) {
       root.Lunaform = {};
     }
-    root.Lunaform.ResourcesApi = factory(root.Lunaform.ApiClient, root.Lunaform.ResponseListResources);
+    root.Lunaform.ResourcesApi = factory(root.Lunaform.ApiClient, root.Lunaform.ResponseListResources, root.Lunaform.ServerError);
   }
-}(this, function(ApiClient, ResponseListResources) {
+}(this, function(ApiClient, ResponseListResources, ServerError) {
   'use strict';
 
   /**

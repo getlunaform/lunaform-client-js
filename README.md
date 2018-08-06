@@ -127,14 +127,25 @@ All URIs are relative to *http://localhost/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Lunaform.ModulesApi* | [**createModule**](docs/ModulesApi.md#createModule) | **POST** /tf/modules | 
+*Lunaform.ModulesApi* | [**deleteModule**](docs/ModulesApi.md#deleteModule) | **DELETE** /tf/module/{id} | 
 *Lunaform.ModulesApi* | [**getModule**](docs/ModulesApi.md#getModule) | **GET** /tf/module/{id} | 
 *Lunaform.ModulesApi* | [**listModules**](docs/ModulesApi.md#listModules) | **GET** /tf/modules | 
+*Lunaform.ProvidersApi* | [**createProvider**](docs/ProvidersApi.md#createProvider) | **POST** /tf/providers/ | 
+*Lunaform.ProvidersApi* | [**createProviderConfiguration**](docs/ProvidersApi.md#createProviderConfiguration) | **POST** /tf/provider/{provider-name}/configurations | 
+*Lunaform.ProvidersApi* | [**deleteProvider**](docs/ProvidersApi.md#deleteProvider) | **DELETE** /tf/provider/{name} | 
+*Lunaform.ProvidersApi* | [**deleteProviderConfiguration**](docs/ProvidersApi.md#deleteProviderConfiguration) | **DELETE** /tf/provider/{provider-name}/configuration/{id} | 
+*Lunaform.ProvidersApi* | [**getProvider**](docs/ProvidersApi.md#getProvider) | **GET** /tf/provider/{name} | 
+*Lunaform.ProvidersApi* | [**getProviderConfiguration**](docs/ProvidersApi.md#getProviderConfiguration) | **GET** /tf/provider/{provider-name}/configuration/{id} | 
+*Lunaform.ProvidersApi* | [**listProviderConfigurations**](docs/ProvidersApi.md#listProviderConfigurations) | **GET** /tf/provider/{provider-name}/configurations | 
+*Lunaform.ProvidersApi* | [**listProviders**](docs/ProvidersApi.md#listProviders) | **GET** /tf/providers/ | 
+*Lunaform.ProvidersApi* | [**updateProvider**](docs/ProvidersApi.md#updateProvider) | **PUT** /tf/provider/{name} | 
 *Lunaform.ResourcesApi* | [**listResourceGroups**](docs/ResourcesApi.md#listResourceGroups) | **GET** / | 
 *Lunaform.ResourcesApi* | [**listResources**](docs/ResourcesApi.md#listResources) | **GET** /{group} | 
 *Lunaform.StacksApi* | [**deployStack**](docs/StacksApi.md#deployStack) | **POST** /tf/stacks | 
 *Lunaform.StacksApi* | [**getStack**](docs/StacksApi.md#getStack) | **GET** /tf/stack/{id} | 
 *Lunaform.StacksApi* | [**listDeployments**](docs/StacksApi.md#listDeployments) | **GET** /tf/stack/{id}/deployments | 
 *Lunaform.StacksApi* | [**listStacks**](docs/StacksApi.md#listStacks) | **GET** /tf/stacks | 
+*Lunaform.StacksApi* | [**undeployStack**](docs/StacksApi.md#undeployStack) | **DELETE** /tf/stack/{id} | 
 *Lunaform.StateBackendsApi* | [**createStateBackend**](docs/StateBackendsApi.md#createStateBackend) | **POST** /tf/state-backends | 
 *Lunaform.StateBackendsApi* | [**listStateBackends**](docs/StateBackendsApi.md#listStateBackends) | **GET** /tf/state-backends | 
 *Lunaform.StateBackendsApi* | [**updateStateBackend**](docs/StateBackendsApi.md#updateStateBackend) | **PUT** /tf/state-backend/{id} | 
@@ -153,18 +164,25 @@ Class | Method | HTTP request | Description
  - [Lunaform.ResourceList](docs/ResourceList.md)
  - [Lunaform.ResourceListTfDeployment](docs/ResourceListTfDeployment.md)
  - [Lunaform.ResourceListTfModule](docs/ResourceListTfModule.md)
+ - [Lunaform.ResourceListTfProvider](docs/ResourceListTfProvider.md)
+ - [Lunaform.ResourceListTfProviderConfiguration](docs/ResourceListTfProviderConfiguration.md)
  - [Lunaform.ResourceListTfStack](docs/ResourceListTfStack.md)
  - [Lunaform.ResourceListTfStateBackend](docs/ResourceListTfStateBackend.md)
  - [Lunaform.ResourceListTfWorkspace](docs/ResourceListTfWorkspace.md)
  - [Lunaform.ResourceTfDeployment](docs/ResourceTfDeployment.md)
  - [Lunaform.ResourceTfModule](docs/ResourceTfModule.md)
+ - [Lunaform.ResourceTfProvider](docs/ResourceTfProvider.md)
+ - [Lunaform.ResourceTfProviderConfiguration](docs/ResourceTfProviderConfiguration.md)
  - [Lunaform.ResourceTfStack](docs/ResourceTfStack.md)
  - [Lunaform.ResourceTfStateBackend](docs/ResourceTfStateBackend.md)
  - [Lunaform.ResourceTfWorkspace](docs/ResourceTfWorkspace.md)
+ - [Lunaform.ResourcetfproviderconfigurationEmbedded](docs/ResourcetfproviderconfigurationEmbedded.md)
  - [Lunaform.ResourcetfstackEmbedded](docs/ResourcetfstackEmbedded.md)
  - [Lunaform.ResponseListResources](docs/ResponseListResources.md)
  - [Lunaform.ResponseListTfDeployments](docs/ResponseListTfDeployments.md)
  - [Lunaform.ResponseListTfModules](docs/ResponseListTfModules.md)
+ - [Lunaform.ResponseListTfProviderConfiguration](docs/ResponseListTfProviderConfiguration.md)
+ - [Lunaform.ResponseListTfProviders](docs/ResponseListTfProviders.md)
  - [Lunaform.ResponseListTfStacks](docs/ResponseListTfStacks.md)
  - [Lunaform.ResponseListTfStateBackends](docs/ResponseListTfStateBackends.md)
  - [Lunaform.ResponseListTfWorkspaces](docs/ResponseListTfWorkspaces.md)

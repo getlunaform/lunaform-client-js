@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **moduleId** | **String** |  | 
 **status** | **String** |  | [optional] 
 **workspace** | **String** |  | [optional] 
+**variables** | **{String: String}** |  | [optional] 
 
 
 <a name="StatusEnum"></a>

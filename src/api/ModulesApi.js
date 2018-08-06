@@ -92,6 +92,52 @@
     }
 
     /**
+     * Callback function to receive the result of the deleteModule operation.
+     * @callback module:api/ModulesApi~deleteModuleCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a terraform module
+     * @param {String} id Unique identifier for this module
+     * @param {module:api/ModulesApi~deleteModuleCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    this.deleteModule = function(id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteModule");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['api-key'];
+      var contentTypes = ['application/vnd.lunaform.v1+json'];
+      var accepts = ['application/vnd.lunaform.v1+json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/tf/module/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getModule operation.
      * @callback module:api/ModulesApi~getModuleCallback
      * @param {String} error Error message, if any.

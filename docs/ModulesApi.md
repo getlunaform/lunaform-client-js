@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createModule**](ModulesApi.md#createModule) | **POST** /tf/modules | 
+[**deleteModule**](ModulesApi.md#deleteModule) | **DELETE** /tf/module/{id} | 
 [**getModule**](ModulesApi.md#getModule) | **GET** /tf/module/{id} | 
 [**listModules**](ModulesApi.md#listModules) | **GET** /tf/modules | 
 
@@ -53,6 +54,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResourceTfModule**](ResourceTfModule.md)
+
+### Authorization
+
+[api-key](../README.md#api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.lunaform.v1+json
+ - **Accept**: application/vnd.lunaform.v1+json
+
+<a name="deleteModule"></a>
+# **deleteModule**
+> deleteModule(id)
+
+
+
+Delete a terraform module
+
+### Example
+```javascript
+var Lunaform = require('lunaform');
+var defaultClient = Lunaform.ApiClient.instance;
+
+// Configure API key authorization: api-key
+var api-key = defaultClient.authentications['api-key'];
+api-key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api-key.apiKeyPrefix = 'Token';
+
+var apiInstance = new Lunaform.ModulesApi();
+
+var id = "id_example"; // String | Unique identifier for this module
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteModule(id, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Unique identifier for this module | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

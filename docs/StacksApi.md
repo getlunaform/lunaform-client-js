@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getStack**](StacksApi.md#getStack) | **GET** /tf/stack/{id} | 
 [**listDeployments**](StacksApi.md#listDeployments) | **GET** /tf/stack/{id}/deployments | 
 [**listStacks**](StacksApi.md#listStacks) | **GET** /tf/stacks | 
+[**undeployStack**](StacksApi.md#undeployStack) | **DELETE** /tf/stack/{id} | 
 
 
 <a name="deployStack"></a>
@@ -207,6 +208,59 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**ResponseListTfStacks**](ResponseListTfStacks.md)
+
+### Authorization
+
+[api-key](../README.md#api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.lunaform.v1+json
+ - **Accept**: application/vnd.lunaform.v1+json
+
+<a name="undeployStack"></a>
+# **undeployStack**
+> undeployStack(id)
+
+
+
+Undeploy a teraform module
+
+### Example
+```javascript
+var Lunaform = require('lunaform');
+var defaultClient = Lunaform.ApiClient.instance;
+
+// Configure API key authorization: api-key
+var api-key = defaultClient.authentications['api-key'];
+api-key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api-key.apiKeyPrefix = 'Token';
+
+var apiInstance = new Lunaform.StacksApi();
+
+var id = "id_example"; // String | Unique identifier for this stack
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.undeployStack(id, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Unique identifier for this stack | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

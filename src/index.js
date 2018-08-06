@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/HalCurie', 'model/HalHref', 'model/HalRscLinks', 'model/Resource', 'model/ResourceAuthUser', 'model/ResourceList', 'model/ResourceListTfDeployment', 'model/ResourceListTfModule', 'model/ResourceListTfStack', 'model/ResourceListTfStateBackend', 'model/ResourceListTfWorkspace', 'model/ResourceTfDeployment', 'model/ResourceTfModule', 'model/ResourceTfStack', 'model/ResourceTfStateBackend', 'model/ResourceTfWorkspace', 'model/ResourcetfstackEmbedded', 'model/ResponseListResources', 'model/ResponseListTfDeployments', 'model/ResponseListTfModules', 'model/ResponseListTfStacks', 'model/ResponseListTfStateBackends', 'model/ResponseListTfWorkspaces', 'model/ServerError', 'api/ModulesApi', 'api/ResourcesApi', 'api/StacksApi', 'api/StateBackendsApi', 'api/WorkspacesApi'], factory);
+    define(['ApiClient', 'model/HalCurie', 'model/HalHref', 'model/HalRscLinks', 'model/Resource', 'model/ResourceAuthUser', 'model/ResourceList', 'model/ResourceListTfDeployment', 'model/ResourceListTfModule', 'model/ResourceListTfProvider', 'model/ResourceListTfProviderConfiguration', 'model/ResourceListTfStack', 'model/ResourceListTfStateBackend', 'model/ResourceListTfWorkspace', 'model/ResourceTfDeployment', 'model/ResourceTfModule', 'model/ResourceTfProvider', 'model/ResourceTfProviderConfiguration', 'model/ResourceTfStack', 'model/ResourceTfStateBackend', 'model/ResourceTfWorkspace', 'model/ResourcetfproviderconfigurationEmbedded', 'model/ResourcetfstackEmbedded', 'model/ResponseListResources', 'model/ResponseListTfDeployments', 'model/ResponseListTfModules', 'model/ResponseListTfProviderConfiguration', 'model/ResponseListTfProviders', 'model/ResponseListTfStacks', 'model/ResponseListTfStateBackends', 'model/ResponseListTfWorkspaces', 'model/ServerError', 'api/ModulesApi', 'api/ProvidersApi', 'api/ResourcesApi', 'api/StacksApi', 'api/StateBackendsApi', 'api/WorkspacesApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/HalCurie'), require('./model/HalHref'), require('./model/HalRscLinks'), require('./model/Resource'), require('./model/ResourceAuthUser'), require('./model/ResourceList'), require('./model/ResourceListTfDeployment'), require('./model/ResourceListTfModule'), require('./model/ResourceListTfStack'), require('./model/ResourceListTfStateBackend'), require('./model/ResourceListTfWorkspace'), require('./model/ResourceTfDeployment'), require('./model/ResourceTfModule'), require('./model/ResourceTfStack'), require('./model/ResourceTfStateBackend'), require('./model/ResourceTfWorkspace'), require('./model/ResourcetfstackEmbedded'), require('./model/ResponseListResources'), require('./model/ResponseListTfDeployments'), require('./model/ResponseListTfModules'), require('./model/ResponseListTfStacks'), require('./model/ResponseListTfStateBackends'), require('./model/ResponseListTfWorkspaces'), require('./model/ServerError'), require('./api/ModulesApi'), require('./api/ResourcesApi'), require('./api/StacksApi'), require('./api/StateBackendsApi'), require('./api/WorkspacesApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/HalCurie'), require('./model/HalHref'), require('./model/HalRscLinks'), require('./model/Resource'), require('./model/ResourceAuthUser'), require('./model/ResourceList'), require('./model/ResourceListTfDeployment'), require('./model/ResourceListTfModule'), require('./model/ResourceListTfProvider'), require('./model/ResourceListTfProviderConfiguration'), require('./model/ResourceListTfStack'), require('./model/ResourceListTfStateBackend'), require('./model/ResourceListTfWorkspace'), require('./model/ResourceTfDeployment'), require('./model/ResourceTfModule'), require('./model/ResourceTfProvider'), require('./model/ResourceTfProviderConfiguration'), require('./model/ResourceTfStack'), require('./model/ResourceTfStateBackend'), require('./model/ResourceTfWorkspace'), require('./model/ResourcetfproviderconfigurationEmbedded'), require('./model/ResourcetfstackEmbedded'), require('./model/ResponseListResources'), require('./model/ResponseListTfDeployments'), require('./model/ResponseListTfModules'), require('./model/ResponseListTfProviderConfiguration'), require('./model/ResponseListTfProviders'), require('./model/ResponseListTfStacks'), require('./model/ResponseListTfStateBackends'), require('./model/ResponseListTfWorkspaces'), require('./model/ServerError'), require('./api/ModulesApi'), require('./api/ProvidersApi'), require('./api/ResourcesApi'), require('./api/StacksApi'), require('./api/StateBackendsApi'), require('./api/WorkspacesApi'));
   }
-}(function(ApiClient, HalCurie, HalHref, HalRscLinks, Resource, ResourceAuthUser, ResourceList, ResourceListTfDeployment, ResourceListTfModule, ResourceListTfStack, ResourceListTfStateBackend, ResourceListTfWorkspace, ResourceTfDeployment, ResourceTfModule, ResourceTfStack, ResourceTfStateBackend, ResourceTfWorkspace, ResourcetfstackEmbedded, ResponseListResources, ResponseListTfDeployments, ResponseListTfModules, ResponseListTfStacks, ResponseListTfStateBackends, ResponseListTfWorkspaces, ServerError, ModulesApi, ResourcesApi, StacksApi, StateBackendsApi, WorkspacesApi) {
+}(function(ApiClient, HalCurie, HalHref, HalRscLinks, Resource, ResourceAuthUser, ResourceList, ResourceListTfDeployment, ResourceListTfModule, ResourceListTfProvider, ResourceListTfProviderConfiguration, ResourceListTfStack, ResourceListTfStateBackend, ResourceListTfWorkspace, ResourceTfDeployment, ResourceTfModule, ResourceTfProvider, ResourceTfProviderConfiguration, ResourceTfStack, ResourceTfStateBackend, ResourceTfWorkspace, ResourcetfproviderconfigurationEmbedded, ResourcetfstackEmbedded, ResponseListResources, ResponseListTfDeployments, ResponseListTfModules, ResponseListTfProviderConfiguration, ResponseListTfProviders, ResponseListTfStacks, ResponseListTfStateBackends, ResponseListTfWorkspaces, ServerError, ModulesApi, ProvidersApi, ResourcesApi, StacksApi, StateBackendsApi, WorkspacesApi) {
   'use strict';
 
   /**
@@ -103,6 +103,16 @@
      */
     ResourceListTfModule: ResourceListTfModule,
     /**
+     * The ResourceListTfProvider model constructor.
+     * @property {module:model/ResourceListTfProvider}
+     */
+    ResourceListTfProvider: ResourceListTfProvider,
+    /**
+     * The ResourceListTfProviderConfiguration model constructor.
+     * @property {module:model/ResourceListTfProviderConfiguration}
+     */
+    ResourceListTfProviderConfiguration: ResourceListTfProviderConfiguration,
+    /**
      * The ResourceListTfStack model constructor.
      * @property {module:model/ResourceListTfStack}
      */
@@ -128,6 +138,16 @@
      */
     ResourceTfModule: ResourceTfModule,
     /**
+     * The ResourceTfProvider model constructor.
+     * @property {module:model/ResourceTfProvider}
+     */
+    ResourceTfProvider: ResourceTfProvider,
+    /**
+     * The ResourceTfProviderConfiguration model constructor.
+     * @property {module:model/ResourceTfProviderConfiguration}
+     */
+    ResourceTfProviderConfiguration: ResourceTfProviderConfiguration,
+    /**
      * The ResourceTfStack model constructor.
      * @property {module:model/ResourceTfStack}
      */
@@ -142,6 +162,11 @@
      * @property {module:model/ResourceTfWorkspace}
      */
     ResourceTfWorkspace: ResourceTfWorkspace,
+    /**
+     * The ResourcetfproviderconfigurationEmbedded model constructor.
+     * @property {module:model/ResourcetfproviderconfigurationEmbedded}
+     */
+    ResourcetfproviderconfigurationEmbedded: ResourcetfproviderconfigurationEmbedded,
     /**
      * The ResourcetfstackEmbedded model constructor.
      * @property {module:model/ResourcetfstackEmbedded}
@@ -162,6 +187,16 @@
      * @property {module:model/ResponseListTfModules}
      */
     ResponseListTfModules: ResponseListTfModules,
+    /**
+     * The ResponseListTfProviderConfiguration model constructor.
+     * @property {module:model/ResponseListTfProviderConfiguration}
+     */
+    ResponseListTfProviderConfiguration: ResponseListTfProviderConfiguration,
+    /**
+     * The ResponseListTfProviders model constructor.
+     * @property {module:model/ResponseListTfProviders}
+     */
+    ResponseListTfProviders: ResponseListTfProviders,
     /**
      * The ResponseListTfStacks model constructor.
      * @property {module:model/ResponseListTfStacks}
@@ -187,6 +222,11 @@
      * @property {module:api/ModulesApi}
      */
     ModulesApi: ModulesApi,
+    /**
+     * The ProvidersApi service constructor.
+     * @property {module:api/ProvidersApi}
+     */
+    ProvidersApi: ProvidersApi,
     /**
      * The ResourcesApi service constructor.
      * @property {module:api/ResourcesApi}
