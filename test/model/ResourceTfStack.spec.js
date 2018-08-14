@@ -81,8 +81,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property workspaceName (base name: "workspace-name")', function() {
+      // uncomment below and update the code to test the property workspaceName
+      //var instane = new Lunaform.ResourceTfStack();
+      //expect(instance).to.be();
+    });
+
     it('should have the property moduleId (base name: "module-id")', function() {
       // uncomment below and update the code to test the property moduleId
+      //var instane = new Lunaform.ResourceTfStack();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property providerConfigurationsIds (base name: "provider-configurations-ids")', function() {
+      // uncomment below and update the code to test the property providerConfigurationsIds
       //var instane = new Lunaform.ResourceTfStack();
       //expect(instance).to.be();
     });
@@ -93,8 +105,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property workspace (base name: "workspace")', function() {
-      // uncomment below and update the code to test the property workspace
+    it('should have the property variables (base name: "variables")', function() {
+      // uncomment below and update the code to test the property variables
       //var instane = new Lunaform.ResourceTfStack();
       //expect(instance).to.be();
     });

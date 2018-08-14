@@ -91,6 +91,16 @@
         done();
       });
     });
+    describe('undeployStack', function() {
+      it('should call undeployStack successfully', function(done) {
+        //uncomment below and update the code to test undeployStack
+        //instance.undeployStack(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

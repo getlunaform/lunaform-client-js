@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 **embedded** | [**ResourcetfstackEmbedded**](ResourcetfstackEmbedded.md) |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | 
-**moduleId** | **String** |  | 
+**workspaceName** | **String** |  | [optional] 
+**moduleId** | **String** |  | [optional] 
+**providerConfigurationsIds** | **[String]** |  | [optional] 
 **status** | **String** |  | [optional] 
-**workspace** | **String** |  | [optional] 
 **variables** | **{String: String}** |  | [optional] 
 
 

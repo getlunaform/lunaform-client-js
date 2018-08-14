@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ResourceTfDeployment', 'model/ResourceTfWorkspace'], factory);
+    define(['ApiClient', 'model/ResourceTfDeployment', 'model/ResourceTfModule', 'model/ResourceTfProviderConfiguration', 'model/ResourceTfWorkspace'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ResourceTfDeployment'), require('./ResourceTfWorkspace'));
+    module.exports = factory(require('../ApiClient'), require('./ResourceTfDeployment'), require('./ResourceTfModule'), require('./ResourceTfProviderConfiguration'), require('./ResourceTfWorkspace'));
   } else {
     // Browser globals (root is window)
     if (!root.Lunaform) {
       root.Lunaform = {};
     }
-    root.Lunaform.ResourcetfstackEmbedded = factory(root.Lunaform.ApiClient, root.Lunaform.ResourceTfDeployment, root.Lunaform.ResourceTfWorkspace);
+    root.Lunaform.ResourcetfstackEmbedded = factory(root.Lunaform.ApiClient, root.Lunaform.ResourceTfDeployment, root.Lunaform.ResourceTfModule, root.Lunaform.ResourceTfProviderConfiguration, root.Lunaform.ResourceTfWorkspace);
   }
-}(this, function(ApiClient, ResourceTfDeployment, ResourceTfWorkspace) {
+}(this, function(ApiClient, ResourceTfDeployment, ResourceTfModule, ResourceTfProviderConfiguration, ResourceTfWorkspace) {
   'use strict';
 
 
@@ -50,6 +50,8 @@
 
 
 
+
+
   };
 
   /**
@@ -66,8 +68,14 @@
       if (data.hasOwnProperty('deployments')) {
         obj['deployments'] = ApiClient.convertToType(data['deployments'], [ResourceTfDeployment]);
       }
+      if (data.hasOwnProperty('provider-configurations')) {
+        obj['provider-configurations'] = ApiClient.convertToType(data['provider-configurations'], [ResourceTfProviderConfiguration]);
+      }
       if (data.hasOwnProperty('workspace')) {
         obj['workspace'] = ResourceTfWorkspace.constructFromObject(data['workspace']);
+      }
+      if (data.hasOwnProperty('module')) {
+        obj['module'] = ResourceTfModule.constructFromObject(data['module']);
       }
     }
     return obj;
@@ -78,9 +86,17 @@
    */
   exports.prototype['deployments'] = undefined;
   /**
+   * @member {Array.<module:model/ResourceTfProviderConfiguration>} provider-configurations
+   */
+  exports.prototype['provider-configurations'] = undefined;
+  /**
    * @member {module:model/ResourceTfWorkspace} workspace
    */
   exports.prototype['workspace'] = undefined;
+  /**
+   * @member {module:model/ResourceTfModule} module
+   */
+  exports.prototype['module'] = undefined;
 
 
 

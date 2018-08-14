@@ -46,16 +46,16 @@
    * @alias module:model/ResourceTfStack
    * @class
    * @param name {String} 
-   * @param moduleId {String} 
    */
-  var exports = function(name, moduleId) {
+  var exports = function(name) {
     var _this = this;
 
 
 
 
     _this['name'] = name;
-    _this['module-id'] = moduleId;
+
+
 
 
 
@@ -84,14 +84,17 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('workspace-name')) {
+        obj['workspace-name'] = ApiClient.convertToType(data['workspace-name'], 'String');
+      }
       if (data.hasOwnProperty('module-id')) {
         obj['module-id'] = ApiClient.convertToType(data['module-id'], 'String');
       }
+      if (data.hasOwnProperty('provider-configurations-ids')) {
+        obj['provider-configurations-ids'] = ApiClient.convertToType(data['provider-configurations-ids'], ['String']);
+      }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('workspace')) {
-        obj['workspace'] = ApiClient.convertToType(data['workspace'], 'String');
       }
       if (data.hasOwnProperty('variables')) {
         obj['variables'] = ApiClient.convertToType(data['variables'], {'String': 'String'});
@@ -117,17 +120,21 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * @member {String} workspace-name
+   */
+  exports.prototype['workspace-name'] = undefined;
+  /**
    * @member {String} module-id
    */
   exports.prototype['module-id'] = undefined;
   /**
+   * @member {Array.<String>} provider-configurations-ids
+   */
+  exports.prototype['provider-configurations-ids'] = undefined;
+  /**
    * @member {module:model/ResourceTfStack.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
-  /**
-   * @member {String} workspace
-   */
-  exports.prototype['workspace'] = undefined;
   /**
    * @member {Object.<String, String>} variables
    */

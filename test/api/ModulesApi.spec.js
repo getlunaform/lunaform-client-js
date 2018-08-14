@@ -61,6 +61,16 @@
         done();
       });
     });
+    describe('deleteModule', function() {
+      it('should call deleteModule successfully', function(done) {
+        //uncomment below and update the code to test deleteModule
+        //instance.deleteModule(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getModule', function() {
       it('should call getModule successfully', function(done) {
         //uncomment below and update the code to test getModule

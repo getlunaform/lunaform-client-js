@@ -63,8 +63,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property providerConfigurations (base name: "provider-configurations")', function() {
+      // uncomment below and update the code to test the property providerConfigurations
+      //var instane = new Lunaform.ResourcetfstackEmbedded();
+      //expect(instance).to.be();
+    });
+
     it('should have the property workspace (base name: "workspace")', function() {
       // uncomment below and update the code to test the property workspace
+      //var instane = new Lunaform.ResourcetfstackEmbedded();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property module (base name: "module")', function() {
+      // uncomment below and update the code to test the property module
       //var instane = new Lunaform.ResourcetfstackEmbedded();
       //expect(instance).to.be();
     });
